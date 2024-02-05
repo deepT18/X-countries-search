@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../src/card.css"
 
 export default function Card() {
   const [countries, setCountries] = useState([]);
@@ -11,17 +12,17 @@ export default function Card() {
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
 
-  const countryCard = {
-    width: "200px",
-    border: "1px solid #ccc",
-    borderRadius: "10px",
-    margin: "10px",
-    padding: "10px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center"
-  };
+  // const countryCard = {
+  //   width: "200px",
+  //   border: "1px solid #ccc",
+  //   borderRadius: "10px",
+  //   margin: "10px",
+  //   padding: "10px",
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   alignItems: "center",
+  //   justifyContent: "center"
+  // };
 
   const containerStyle = {
     display: "flex",
@@ -58,7 +59,7 @@ export default function Card() {
         <div style={searchIconStyle} />
       </div>
       {filteredCountries.map((country) => (
-        <div key={country.cca3} style={countryCard}>
+        <div key={country.cca3} className="countryCard">
           <img
             src={country.flags.png}
             alt={`Flag of ${country.name.common}`}
