@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "../src/card.css"; // Assuming you have a CSS module
 
 export default function Card() {
   const [countries, setCountries] = useState([]);
@@ -81,7 +82,7 @@ export default function Card() {
         <div style={searchIconStyle} />
       </div>
       {filteredCountries.map((country) => (
-        <div key={country.cca3} style={countryCardStyle} className="countryCard">
+        <div key={country.cca3} style={countryCardStyle} className={styles.countryCard}>
           <img
             src={country.flags.png}
             alt={`Flag of ${country.name.common}`}
