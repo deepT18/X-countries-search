@@ -11,7 +11,7 @@ export default function Card() {
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
 
-  const cardStyle = {
+  const countryCard = {
     width: "200px",
     border: "1px solid #ccc",
     borderRadius: "10px",
@@ -58,7 +58,7 @@ export default function Card() {
         <div style={searchIconStyle} />
       </div>
       {filteredCountries.map((country) => (
-        <div key={country.cca3} style={cardStyle}>
+        <div key={country.cca3} style={countryCard}>
           <img
             src={country.flags.png}
             alt={`Flag of ${country.name.common}`}
