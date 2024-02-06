@@ -81,14 +81,12 @@ export default function Card() {
         />
         <div style={searchIconStyle} />
       </div>
-      <div className="countryCard">
       {filteredCountries.map((country) => (
         <div className="countryCard" style={countryCardStyle} key={country.cca3}>
           <img src={country.flags.png} alt={`Flag of ${country.name.common}`} style={imageStyle} />
           <h2 style={{ marginTop: "10px" }}>{country.name.common}</h2>
         </div>
       ))}
-      </div>
     </div>
   );
 }
