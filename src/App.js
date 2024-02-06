@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./card.css"; // Make sure you have a CSS module file named "card.module.css" in your project
+import "./card.css"; // Make sure you have a CSS module file named "card.module.css" in your project
 
 export default function Card() {
   const [countries, setCountries] = useState([]);
