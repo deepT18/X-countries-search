@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import styles from "../src/card.css"; // Assuming you have a CSS module
+import styles from "./card.css"; // Make sure you have a CSS module file named "card.module.css" in your project
 
 export default function Card() {
   const [countries, setCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all/")
+    fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
       .then((data) => setCountries(data))
       .catch((error) => console.error("Error fetching data: ", error));
@@ -82,15 +82,9 @@ export default function Card() {
         <div style={searchIconStyle} />
       </div>
       {filteredCountries.map((country) => (
-        <div className={styles.countryCard}>
-        <div key={country.cca3} style={countryCardStyle} className={styles.countryCard}>
-          <img
-            src={country.flags.png}
-            alt={`Flag of ${country.name.common}`}
-            style={imageStyle}
-          />
-          <h2>{country.name.common}</h2>
-        </div>
+        <div className={styles.countryCard} style={countryCardStyle} key={country.cca3}>
+          <img src={country.flags.png} alt={`Flag of ${country.name.common}`} style={imageStyle} />
+          <h2 style={{ marginTop: "10px" }}>{country.name.common}</h2>
         </div>
       ))}
     </div>
